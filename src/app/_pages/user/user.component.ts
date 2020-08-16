@@ -1,6 +1,7 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GithubService } from 'src/app/_services/github.service';
+import { swalNotification } from '../../_helper/SwalNotification';
 import { Router } from '@angular/router';
 
 @Component({
@@ -35,11 +36,11 @@ export class UserComponent implements OnInit {
         this.loading = false;
         this.router.navigate(['user', userName])
       },
-      err => {
+      async err => {
         this.loading = false;
         this.userForm.reset();
         this.userNameInput.nativeElement.focus();
-        alert('User not found!');
+        await swalNotification('error', 'User not found!');
       })
   }
 }

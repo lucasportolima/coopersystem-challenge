@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   URL_API: 'https://api.github.com/users/lucasportolima',
-  GITHUB_ACCESS_TOKEN: 'b82798789645208150db55cdb6f33ba817ee7744'
+  GITHUB_ACCESS_TOKEN: 'fbfd4e4191f366d646fbc74c1df3c8dc7319b187'
 };

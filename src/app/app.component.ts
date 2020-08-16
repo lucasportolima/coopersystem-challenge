@@ -5,4 +5,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    //implementation of internationalization
+  }
+}
