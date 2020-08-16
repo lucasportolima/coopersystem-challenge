@@ -1,5 +1,7 @@
+@import '../../../../../styles.scss';
+
 .board {
-  background-color: #ddd;
+  background-color: $background-color;
   height: 100vh;
   align-items: center;
   display: flex;
@@ -8,13 +10,13 @@
   justify-content: center;
 
   .board-list {
-    background-color: #F1F1F1;
+    background-color: $background-content-color;
     width: 100%;
     height: fit-content;
     max-height: 80vh;
     max-width: 650.5px;
     margin: auto;
-    box-shadow: 0 0 5em rgba(74, 91, 104, 0.25);
+    box-shadow: $shadow;
     overflow-y: auto;
     border-radius: 10px;
     padding: 2.5% 1.5%;
@@ -26,10 +28,10 @@
 .board-list::-webkit-scrollbar {
   width: 8px;
   height: 8px;
-  background-color: #F1F1F1;
+  background-color: $background-content-color;
 }
 
 .board-list::-webkit-scrollbar-thumb {
   border-spacing: 10px 10px;
-  background-color: #343a40;
+  background-color: $primary;
 }

@@ -1,10 +1,11 @@
+@import '../../../assets/stylesheets/var';
 .card {
   height: 65px;
   display: block;
   padding: 10px;
   opacity: 0.7;
   border-radius: 8px;
-  background: -webkit-linear-gradient(top, #02C934 0%, #048A23 100%);
+  background: $linear-gradient-card;
   margin-top: 20px;
   transition: height 1s;
   overflow-y: hidden;
@@ -74,5 +75,5 @@ p,
 i,
 strong,
 a {
-  color: #000 !important;
+  color: $black !important;
 }
