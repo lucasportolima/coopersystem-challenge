@@ -4,10 +4,14 @@
       <label for="userName">Username</label>
       <input id="userName" formControlName="userName" #userNameInput class="rounded form-control" type="search"
         placeholder="Github username" autofocus>
-      <small *ngIf="userForm.get('userName').errors?.required" class="text-danger d-block mt-2">
+      <small *ngIf="userForm.get('userName').errors?.required && userForm.get('userName').touched"
+        class="text-danger d-block mt-2">
         User name is required!
       </small>
     </div>
-    <button [disabled]="userForm.invalid" type="submit" class="btn btn-block">Buscar</button>
+    <button [disabled]="userForm.invalid" type="submit" class="btn btn-block">
+      <span *ngIf="!loading">Buscar</span>
+      <app-loading *ngIf="loading"></app-loading>
+    </button>
   </form>
 </div>
