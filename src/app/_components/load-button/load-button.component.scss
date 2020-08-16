@@ -1,7 +1,7 @@
+@import '../../../styles.scss';
+
 button,
 button:hover,
 button:active button:visited {
-  background-color: #343a40;
-  border: none;
-  color: #f1f1f1;
+  @include app-button;
 }

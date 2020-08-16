@@ -14,7 +14,6 @@ export class CardComponent {
 
     readMore(e: any) {
         this.readMoreCard = !this.readMoreCard;
-        console.log(this.repo);
     }
 
     copyUrl(e: any) {

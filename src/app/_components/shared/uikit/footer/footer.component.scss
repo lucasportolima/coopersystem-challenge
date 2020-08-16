@@ -1,17 +1,19 @@
+@import '../../../../../assets/stylesheets/var';
+
 .author-description {
   p {
-    color: #f1f1f1;
+    color: $background-content-color;
     text-align: center;
 
     strong {
-      color: #4B9D34;
+      color: $secondary;
       transition: color 2s;
     }
   }
 
   p:first-of-type {
     .heart {
-      color: red;
+      color: $red;
     }
 
     strong:last-of-type {
@@ -25,7 +27,7 @@
     margin-bottom: -5px;
 
     strong {
-      color: #f1f1f1;
+      color: $font-color-content;
     }
   }
 }
