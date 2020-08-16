@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class UserComponent implements OnInit {
 
   userForm: FormGroup;
+  loading: boolean = false;
   @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>;
 
   constructor(
@@ -27,10 +28,15 @@ export class UserComponent implements OnInit {
   }
 
   search(): void {
+    this.loading = true;
     const userName = this.userForm.get('userName').value;
     this.githubService.listFromUserPaginated(userName, 1).subscribe(
-      () => this.router.navigate(['user', userName]),
+      () => {
+        this.loading = false;
+        this.router.navigate(['user', userName])
+      },
       err => {
+        this.loading = false;
         this.userForm.reset();
         this.userNameInput.nativeElement.focus();
         alert('User not found!');

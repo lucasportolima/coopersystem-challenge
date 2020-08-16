@@ -14,6 +14,7 @@ import { GithubService } from '../../_services/github.service';
 export class RepositoryListComponent implements OnInit {
 
   repositorys: RepositoryPreview[] = [];
+  loading: boolean = false;
   value: string = '';
   debounce: Subject<string> = new Subject<string>();
   hasMore: boolean = true;
@@ -35,9 +36,11 @@ export class RepositoryListComponent implements OnInit {
   }
 
   load() {
+    this.loading = true;
     this.githubService.listFromUserPaginated(this.userName, ++this.currentPage).subscribe(repositorys => {
       this.repositorys = this.repositorys.concat(repositorys);
       if (!repositorys.length) this.hasMore = false;
+      this.loading = false;
     })
   }
 }

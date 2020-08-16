@@ -10,6 +10,7 @@ import { CardsComponent } from '../_components/cards/cards.component';
 import { FilterByName } from './repository-list/filter-by-name.pipe';
 import { LoadButtonComponent } from '../_components/load-button/load-button.component';
 import { UserComponent } from './user/user.component';
+import { LoadingComponent } from '../_components/shared/loading/loading.component'
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { UserComponent } from './user/user.component';
         CardsComponent,
         FilterByName,
         LoadButtonComponent,
-        UserComponent
+        UserComponent,
+        LoadingComponent
     ],
     imports: [
         HttpClientModule,
