@@ -1,6 +1,7 @@
 {
   "name": "coopersystem-challenge",
-  "version": "0.0.0",
+  "version": "1.0.1",
+  "author": "Lucas Porto",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
