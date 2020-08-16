@@ -1,0 +1,17 @@
+<div fxFlex="50%" fxFlex.gt-sm="75%">
+    <form class="form">
+        <div class="form-group">
+            <label for="username"><strong>{{ userName }} repositories</strong></label>
+            <input id="username" class="rounded form-control" type="search" placeholder="search by name..." autofocus
+                (keyup)="debounce.next($event.target.value)" [value]="value">
+        </div>
+    </form>
+</div>
+
+<div fxFlex="50%" fxFlex.gt-sm="75%">
+    <app-cards [repositorys]="repositorys | filterByName: value"></app-cards>
+</div>
+
+<div fxFlex="50%" fxFlex.gt-sm="75%">
+    <app-load-button (click)="load()" [hasMore]="hasMore"></app-load-button>
+</div>

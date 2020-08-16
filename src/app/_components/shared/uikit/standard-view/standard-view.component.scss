@@ -1,0 +1,35 @@
+.board {
+  background-color: #ddd;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .board-list {
+    background-color: #F1F1F1;
+    width: 100%;
+    height: fit-content;
+    max-height: 80vh;
+    max-width: 650.5px;
+    margin: auto;
+    box-shadow: 0 0 5em rgba(74, 91, 104, 0.25);
+    overflow-y: auto;
+    border-radius: 10px;
+    padding: 2.5% 1.5%;
+    transition: height 2s;
+    flex-direction: row !important;
+  }
+}
+
+.board-list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #F1F1F1;
+}
+
+.board-list::-webkit-scrollbar-thumb {
+  border-spacing: 10px 10px;
+  background-color: #343a40;
+}

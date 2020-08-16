@@ -1,0 +1,33 @@
+<div class="card" [ngClass]="{'my-class': readMoreCard}">
+  <div class="content">
+    <div class="section head">
+      <p>
+        <span><strong>Name:</strong> {{ repo.name.length > 40 ? repo.name.slice(0, 40) + '...' : repo.name }}</span>
+        <span class="card-label_permission"><strong>
+            <i class="fa" [ngClass]="{'fa-unlock': !repo.private, 'fa-lock': repo.private}"></i>
+          </strong> {{ repo.private ? 'Privado' : 'Público' }}</span>
+      </p>
+      <p><strong>Description:</strong>
+        {{ (repo.description + '').length > 60 ? repo.description.slice(0, 60) + '...' : repo.description }}</p>
+    </div>
+    <div class="section body">
+      <p>
+        <span><strong>Default branch:</strong> {{repo.default_branch}}</span>
+        <span class="card-label_clone"><strong (click)="copyUrl($event)" [attr.data-clone-url]="repo.clone_url"><i
+              class="fa fa-copy"></i> Clone
+            url </strong></span>
+        <span class="card-external_link"><strong><a [href]="repo.html_url" target="_blank" [rel]="repo.description"><i
+                class="fa fa-external-link"></i> Access</a></strong></span>
+      </p>
+      <p class="label-dates">
+        <span><strong>Created in:</strong> {{ getFullDate(repo.created_at) }}</span>
+        <span><strong>Last push in:</strong> {{ getFullDate(repo.pushed_at) }}</span>
+      </p>
+    </div>
+    <div class="section footer">
+      <span class="btn-read_more" (click)="readMore($event)">
+        <i class="fa" [ngClass]="{'fa-plus': !readMoreCard, 'fa-minus': readMoreCard}"></i>
+      </span>
+    </div>
+  </div>
+</div>

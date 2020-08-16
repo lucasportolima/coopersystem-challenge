@@ -1,0 +1,9 @@
+<p class="text-center text-muted" *ngIf="!repositorys.length">
+    Sorry, no repositorys
+</p>
+
+<ol class="list-unstyled">
+    <li *ngFor="let repository of repositorys" class="cardList" appDarkenOnHover>
+        <app-card [repo]="repository" apDarkenOnHover></app-card>
+    </li>
+</ol>

@@ -1,0 +1,31 @@
+.author-description {
+  p {
+    color: #f1f1f1;
+    text-align: center;
+
+    strong {
+      color: #4B9D34;
+      transition: color 2s;
+    }
+  }
+
+  p:first-of-type {
+    .heart {
+      color: red;
+    }
+
+    strong:last-of-type {
+      cursor: pointer;
+    }
+  }
+
+  p:last-of-type {
+    font-size: 12px;
+    margin-top: -15px;
+    margin-bottom: -5px;
+
+    strong {
+      color: #f1f1f1;
+    }
+  }
+}
