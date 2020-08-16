@@ -7,6 +7,9 @@ import { LoadButtonComponent } from '../../_components/load-button/load-button.c
 import { FilterByName } from './filter-by-name.pipe';
 import { PagesModule } from '../pages.module';
 import { DarkenOnHoverModule } from '../../_directives/darken-on-hover/darken-on-hover.module';
+import { RouterModule } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { DarkenOnHoverModule } from '../../_directives/darken-on-hover/darken-on
   imports: [
     CommonModule,
     PagesModule,
-    DarkenOnHoverModule
+    DarkenOnHoverModule,
+    RouterModule.forRoot([]),
+    HttpClientTestingModule
   ]
 })
 export class RepositoryListModule { }
