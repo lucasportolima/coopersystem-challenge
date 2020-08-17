@@ -1,8 +1,12 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+
 import { GithubService } from 'src/app/_services/github/github.service';
 import { swalNotification } from '../../_helper/SwalNotification';
-import { Router } from '@angular/router';
+import { User } from 'src/app/_models/user/user';
+import * as UserActions from '../../_actions/user.action';
 
 @Component({
   selector: 'app-user',
@@ -19,6 +23,7 @@ export class UserComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private githubService: GithubService,
+    private store: Store<User>,
     private router: Router
   ) { }
 
@@ -33,7 +38,9 @@ export class UserComponent implements OnInit {
     const userName = this.userForm.get('userName').value;
     this.githubService.getUser(userName).subscribe(
       res => {
+        const payload: any = res;
         this.loading = false;
+        this.store.dispatch(UserActions.actionSetUser({ payload }));
         sessionStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['user', userName])
       },
