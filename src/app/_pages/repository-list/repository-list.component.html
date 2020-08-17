@@ -2,7 +2,7 @@
     <form class="form">
         <div class="form-group">
             <label for="username"><strong>{{ userName }} repositories</strong></label>
-            <input id="username" class="rounded form-control" type="search" placeholder="search by name..." autofocus
+            <input id="username" class="rounded form-control" type="search" placeholder="Search by name..." autofocus
                 (keyup)="debounce.next($event.target.value)" [value]="value">
         </div>
     </form>
