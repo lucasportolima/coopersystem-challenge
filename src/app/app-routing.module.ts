@@ -4,19 +4,21 @@ import { RepositoryListComponent } from './_pages/repository-list/repository-lis
 import { UserComponent } from './_pages/user/user.component';
 import { NotFoundComponent } from './_pages/errors/not-found/not-found.component';
 import { RepositoryListResolver } from './_pages/repository-list/repository-list.resolver';
-
+import { AuthUserGuard, AuthRepository } from './_helper/auth/';
 
 const routes: Routes = [
   {
     path: 'user/:name',
     component: RepositoryListComponent,
+    canActivate: [AuthRepository],
     resolve: {
       repositorys: RepositoryListResolver
     }
   },
   {
     path: '',
-    component: UserComponent
+    component: UserComponent,
+    canActivate: [AuthUserGuard]
   },
   { path: '**', component: NotFoundComponent }
 ];

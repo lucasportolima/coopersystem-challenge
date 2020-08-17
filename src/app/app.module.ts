@@ -9,7 +9,7 @@ import {
   FooterComponent,
   HeaderComponent,
   StandardViewComponent
-} from './_components/shared/uikit/index';
+} from './_components/shared/uikit';
 
 import { PagesModule } from './_pages/pages.module';
 import { DarkenOnHoverModule } from './_directives/darken-on-hover/darken-on-hover.module';

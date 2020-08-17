@@ -31,9 +31,10 @@ export class UserComponent implements OnInit {
   search(): void {
     this.loading = true;
     const userName = this.userForm.get('userName').value;
-    this.githubService.listFromUserPaginated(userName, 1).subscribe(
-      () => {
+    this.githubService.getUser(userName).subscribe(
+      res => {
         this.loading = false;
+        sessionStorage.setItem('user', JSON.stringify(res));
         this.router.navigate(['user', userName])
       },
       async err => {

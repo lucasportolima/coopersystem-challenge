@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { User } from 'src/app/_models/user/user';
+import { SessionStorageService } from '../../../../_services/session-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +10,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  isShowDropdown: boolean = false;
+
+  constructor(
+    private router: Router,
+    private sessionStorageService: SessionStorageService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +25,16 @@ export class HeaderComponent implements OnInit {
   }
 
   goOut(): void {
-    this.router.navigate([''])
+    this.sessionStorageService.remove('user');
+    this.toggleDropdown();
+    this.router.navigate(['']);
+  }
+
+  toggleDropdown(): void {
+    this.isShowDropdown = !this.isShowDropdown
+  }
+
+  getUser(): User {
+    return this.sessionStorageService.get('user');
   }
 }
