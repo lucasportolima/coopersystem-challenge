@@ -3,12 +3,13 @@
 
   <div *ngIf="isHome()" class="dropdown dropdown-avatar" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <img (click)="toggleDropdown()" class="dropdown-toggle img-avatar" [src]="getUser()?.avatar_url"
-      [alt]="getUser()?.name" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <img (click)="toggleDropdown()" class="dropdown-toggle img-avatar" [src]="(user$| async)?.user?.avatar_url"
+      [alt]="(user$| async)?.user?.name" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+      aria-expanded="false">
     <div *ngIf="isShowDropdown" class="dropdown-menu dropdown-menu-account" aria-labelledby="dropdownMenuButton">
       <div class="dropdown-item dropdown-item-account">
-        <img class="img-avatar" [src]="getUser()?.avatar_url" [alt]="getUser()?.name">
-        <p>{{ getUser()?.name }}</p>
+        <img class="img-avatar" [src]="(user$| async)?.user?.avatar_url" [alt]="(user$| async)?.user?.name">
+        <p>{{ (user$| async)?.user?.name }}</p>
       </div>
       <p (click)="goOut()" class="dropdown-item dropdown-item-exit">Go out</p>
     </div>

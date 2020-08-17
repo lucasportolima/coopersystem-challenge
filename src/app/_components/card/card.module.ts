@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CardComponent } from './card.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+
+import { CardComponent } from './card.component';
 
 @NgModule({
     declarations: [CardComponent],

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+
 import { RepositoryPreview } from '../../_models/repository-preview/repository-preview';
 
 @Pipe({ name: 'filterByName' })
