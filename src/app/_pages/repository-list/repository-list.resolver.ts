@@ -2,7 +2,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-import { GithubService } from '../../_services/github.service';
+import { GithubService } from '../../_services/github/github.service';
 import { RepositoryPreview } from '../../_models/repository-preview/repository-preview';
 
 @Injectable({ providedIn: 'root' })

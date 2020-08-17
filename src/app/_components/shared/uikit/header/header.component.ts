@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/_models/user/user';
-import { SessionStorageService } from '../../../../_services/session-storage.service';
+import { SessionStorageService } from '../../../../_services/session-storage/session-storage.service';
 
 @Component({
   selector: 'app-header',

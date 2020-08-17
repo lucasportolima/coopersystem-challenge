@@ -1,9 +1,9 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { RepositoryPreview } from '../_models/repository-preview/repository-preview';
-import { User } from '../_models/user/user';
-import { environment } from '../../environments/environment';
+import { RepositoryPreview } from '../../_models/repository-preview/repository-preview';
+import { User } from '../../_models/user/user';
+import { environment } from '../../../environments/environment';
 
 const { URL_API, GTB_ACCSS_TKN } = environment;
 

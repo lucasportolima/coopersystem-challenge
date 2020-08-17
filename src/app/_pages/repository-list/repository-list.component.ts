@@ -4,7 +4,7 @@ import { debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
 import { RepositoryPreview } from '../../_models/repository-preview/repository-preview';
-import { GithubService } from '../../_services/github.service';
+import { GithubService } from '../../_services/github/github.service';
 
 @Component({
   selector: 'app-repository-list',
