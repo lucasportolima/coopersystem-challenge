@@ -1,5 +1,5 @@
-## Requirements
-- Description: This project was developed with the purpose of being a test of competence for the position of angular developer at coopersystem.
+## Description
+- This project was developed with the purpose of being a test of competence for the position of angular developer at coopersystem.
 
 ## Requirements
 
