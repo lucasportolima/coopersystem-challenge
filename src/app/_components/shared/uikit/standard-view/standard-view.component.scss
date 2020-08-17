@@ -11,7 +11,7 @@
 
   .board-list {
     background-color: $background-content-color;
-    width: 100%;
+    width: 95%;
     height: fit-content;
     max-height: 80vh;
     max-width: 650.5px;
@@ -19,7 +19,7 @@
     box-shadow: $shadow;
     overflow-y: auto;
     border-radius: 10px;
-    padding: 2.5% 1.5%;
+    padding: 25px 2.5%;
     transition: height 2s;
     flex-direction: row !important;
   }
