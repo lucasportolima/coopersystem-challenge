@@ -1,7 +1,7 @@
-import { AuthRepository } from './authRepository.guard';
+import { AuthRepositoryGuard } from './authRepository.guard';
 import { AuthUserGuard } from './authUser.guard';
 
 export {
-  AuthRepository,
+  AuthRepositoryGuard,
   AuthUserGuard
 }

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { User } from '../../_models/user/user';
 
 @Injectable({ providedIn: 'root' })
-export class AuthRepository implements CanActivate {
+export class AuthRepositoryGuard implements CanActivate {
 
   constructor(
     private sessionStorageService: SessionStorageService,

@@ -35,7 +35,7 @@ export class RepositoryListComponent implements OnInit {
     this.debounce.unsubscribe();
   }
 
-  load() {
+  load(): void {
     this.loading = true;
     this.githubService.listFromUserPaginated(this.userName, ++this.currentPage).subscribe(repositorys => {
       this.repositorys = this.repositorys.concat(repositorys);
