@@ -40,7 +40,10 @@ export class UserComponent implements OnInit {
         this.loading = false;
         this.userForm.reset();
         this.userNameInput.nativeElement.focus();
-        await swalNotification('error', 'User not found!');
+        if (err.status)
+          await swalNotification('error', err.statusText);
+        else
+          await swalNotification('error', 'User not found!');
       })
   }
 }
