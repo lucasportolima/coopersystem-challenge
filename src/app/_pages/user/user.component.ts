@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { GithubService } from 'src/app/_services/github.service';
+import { GithubService } from 'src/app/_services/github/github.service';
 import { swalNotification } from '../../_helper/SwalNotification';
 import { Router } from '@angular/router';
 
