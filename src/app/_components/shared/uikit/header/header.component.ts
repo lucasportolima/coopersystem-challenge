@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/_models/user/user';
 import { SessionStorageService } from '../../../../_services/session-storage/session-storage.service';
@@ -8,7 +8,7 @@ import { SessionStorageService } from '../../../../_services/session-storage/ses
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   isShowDropdown: boolean = false;
 
@@ -16,9 +16,6 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private sessionStorageService: SessionStorageService
   ) { }
-
-  ngOnInit(): void {
-  }
 
   isHome(): boolean {
     return location.href.toString().indexOf('/user') >= 0

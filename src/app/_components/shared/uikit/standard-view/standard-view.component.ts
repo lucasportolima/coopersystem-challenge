@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-standard-view',
   templateUrl: './standard-view.component.html',
   styleUrls: ['./standard-view.component.scss']
 })
-export class StandardViewComponent implements OnInit {
+export class StandardViewComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

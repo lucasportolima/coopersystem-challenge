@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RepositoryPreview } from '../../_models/repository-preview/repository-preview';
 
 @Component({
@@ -6,26 +6,9 @@ import { RepositoryPreview } from '../../_models/repository-preview/repository-p
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.scss']
 })
-export class CardsComponent implements OnChanges {
+export class CardsComponent {
 
-  @Input() repositorys;
-  rows: any[] = [];
+  @Input() repositorys: RepositoryPreview[];
 
   constructor() { }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes.repositorys)
-      this.rows = this.groupColumns(this.repositorys);
-  }
-
-  groupColumns(repositorys: RepositoryPreview[]) {
-    const newRows = [];
-
-    for (let index = 0; index < repositorys.length; index += 3) {
-      newRows.push(repositorys.slice(index, index + 3));
-    }
-
-    return newRows;
-  }
-
 }
